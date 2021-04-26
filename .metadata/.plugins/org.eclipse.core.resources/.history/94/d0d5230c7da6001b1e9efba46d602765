@@ -1,0 +1,39 @@
+package LockedMe.com;
+
+import java.util.Scanner;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		WelcomeScreen m =new WelcomeScreen();
+		m.welcome();
+		m.mainOptions();
+		
+		FilesHandling f = new FilesHandling();
+		try{
+            @SuppressWarnings("resource")
+			Scanner scanner = new Scanner(System.in);
+            int option = scanner.nextInt();
+            switch (option){
+                case 1 : {
+                    f.listOfFiles();
+                    m.mainOptions();
+                    }
+                case 2 : {
+                    m.fileOptions();
+                     }
+                case 3 : {
+                    System.out.println("Thank You");
+                    System.exit(0);
+                   }
+                default: m.mainOptions();
+            }
+        }
+        catch (Exception e){
+            System.out.println("Please enter 1, 2 or 3");
+            m.mainOptions();
+        }
+
+	}
+
+}

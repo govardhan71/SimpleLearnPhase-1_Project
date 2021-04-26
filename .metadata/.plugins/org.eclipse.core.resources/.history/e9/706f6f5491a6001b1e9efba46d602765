@@ -1,0 +1,22 @@
+package LockedMe.com;
+
+import java.io.File;
+
+public class FilesHandling {
+	
+	void listOfFiles() {
+		File directoryPath = new File("E:\\SimpleLearnPhase-1_Project\\sample");
+		String contents[] = directoryPath.list();
+		if (contents.length==0)
+			System.out.println("Folder is Empty No Files Exist");
+		else {
+			 System.out.println("List of files in the specified directory:");
+		      for(int i=0; i<contents.length; i++) {
+		         System.out.println(contents[i]);
+		      }
+		}
+			
+	     
+	}
+
+}
